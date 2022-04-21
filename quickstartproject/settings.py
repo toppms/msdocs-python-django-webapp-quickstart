@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
+import pymysql
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hello_azure'
+    'hello_azure',
+    'minseokapp2022',
 ]
 
 MIDDLEWARE = [
@@ -74,11 +76,16 @@ WSGI_APPLICATION = 'quickstartproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+pymysql.install_as_MySQLdb()
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'testdb',
+        'USER': 'mysqladmin@minseokmysqlserver',
+        'PASSWORD': 'eogksalsrnr1!',
+        'HOST': 'minseokmysqlserver.mysql.database.azure.com',
+        'PORT': '3306'
     }
 }
 
