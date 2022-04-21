@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/f51ff8a7-a4bf-4fcd-a05f-1a3d7e309ed4/resourceGroups/webapp_rg/providers/Microsoft.Web/sites/minseokapp2022",
+    "appService.deploySubpath": "."
+}
