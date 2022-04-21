@@ -1,7 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-
+from .models import User #User 모델 불러오기
+#################################
+def user_view(request):
+    users = User.objects.all()
+    return render(request, 'index.html',{"users":users})
+#################################
 def index(request):
     print('Request for index page received')
     return render(request, 'hello_azure/index.html')
